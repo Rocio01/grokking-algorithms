@@ -30,10 +30,25 @@ def max_number(arr)
 
 end
 
-my_arr = [1, 2, 3, 4, 5]
-empty_arr = []
+def quickSort(arr)
 
-puts(sum(my_arr))
-puts(items_list_count(my_arr))
-puts(max_number(my_arr))
-puts(max_number(empty_arr))
+  if arr.length < 2
+    return arr
+  else  
+    pivot = arr[0]
+    r = arr[1..-1]
+    less = r.select {|n| n < pivot}
+    greater = r.select {|n| n > pivot}
+  
+    quickSort(less) + [pivot] + quickSort(greater);
+  end
+
+
+end
+
+my_arr = [100, 2, 20, 4, 5]
+
+
+
+puts(quickSort(my_arr))
+ 
