@@ -30,25 +30,24 @@ def max_number(arr)
 
 end
 
-def quickSort(arr)
+def quick_sort(arr)
 
   if arr.length < 2
     return arr
   else  
     pivot = arr[0]
-    r = arr[1..-1]
-    less = r.select {|n| n < pivot}
-    greater = r.select {|n| n > pivot}
+    less = arr.select {|n| n < pivot}
+    greater = arr.select {|n| n > pivot}
   
-    quickSort(less) + [pivot] + quickSort(greater);
+    quick_sort(less) + [pivot] + quick_sort(greater);
   end
 
 
 end
 
-my_arr = [100, 2, 20, 4, 5]
+my_arr = [100, 2, 20, 4, 5, -10, -1000]
 
 
 
-puts(quickSort(my_arr))
+puts(quick_sort(my_arr))
  
