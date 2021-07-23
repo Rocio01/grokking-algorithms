@@ -33,9 +33,20 @@ function maxNumber(arr){
   }
 }
 
-const my_arr = [1,2,3,4,5,6,7, 30];
 
-console.log(recursionSum(my_arr));
-console.log(itemsListCount(my_arr));
+function quickSort(arr) {
+  if (arr.length < 2){
+    return arr;
+  }
+  else {
+    const pivot = arr[0];
+    let less = arr.filter(n => n < pivot);
+    let greater = arr.filter(n => n > pivot); 
 
-console.log(maxNumber(my_arr));
+    return quickSort(less).concat([pivot], quickSort(greater));
+  }
+}
+
+const my_arr = [-1000,2,3,4,100,6,7, 30];
+
+console.log(quickSort(my_arr));
