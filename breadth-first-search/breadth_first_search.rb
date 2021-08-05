@@ -6,7 +6,7 @@ graph["alice"] = %w(peggy)
 graph["claire"] = %w(thom jonny)
 graph["anuj"] = []
 graph["peggy"] = []
-graph["thom"] = []
+graph["thom"] = ["pem"]
 graph["jonny"] = []
 
 
@@ -28,7 +28,7 @@ def search(name, g)
         puts("#{person} is a mango seller")
         return true
       else  
-        search_queue += g[person];
+        search_queue += g[person]
         searched.push(person)
       end
     end    
