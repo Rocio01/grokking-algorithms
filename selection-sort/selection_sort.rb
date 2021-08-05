@@ -21,5 +21,4 @@ return new_arr
 end
 arr = [3, 2, 1, 5, 7, 6, -7]
 
-print(selection_sort(arr))
-
+# print(selection_sort(arr))
