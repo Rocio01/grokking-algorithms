@@ -38,3 +38,15 @@ def staircase(n)
 
 end
 # puts(staircase(6))
+
+def miniMaxSum(arr)
+  # Write your code here
+  sort_arr = arr.sort
+  sum = sort_arr.reduce(:+)
+  maxSum = sum - sort_arr[0];
+  miniSum = sum - sort_arr[sort_arr.length - 1];
+  print(miniSum," ", maxSum)
+
+end
+arr = [3, 2, 1, 5, 7, 6]
+puts(miniMaxSum(arr))

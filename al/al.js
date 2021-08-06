@@ -39,4 +39,17 @@ function LongestWord(sen) {
 
 }
 
-console.log(LongestWord("Wilmer Alexis!!! Martinez"))
+// console.log(LongestWord("Wilmer Alexis!!! Martinez"))
+
+function miniMaxSum(arr) {
+  arr.sort()
+  let sum = arr.reduce((total, amount) => total + amount);
+  let maxSum = sum - arr[0];
+  let miniSum = sum - arr[arr.length - 1];
+  console.log(miniSum, maxSum)
+
+}
+
+let arr = [3, 2, 1, 5, 7, 6];
+
+ console.log(miniMaxSum(arr))
