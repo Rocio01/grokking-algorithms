@@ -48,5 +48,27 @@ def miniMaxSum(arr)
   print(miniSum," ", maxSum)
 
 end
-arr = [3, 2, 1, 5, 7, 6]
-puts(miniMaxSum(arr))
+arr = [3, 2, 1, 5, 7, 6, 7, ]
+# puts(miniMaxSum(arr))
+
+def birthdayCakeCandles(candles)
+  # Write your code here
+  result = 0
+  for i in candles
+     if i == candles.max
+     result += 1
+     end
+    
+  end
+  result
+
+end
+
+def birthdayCakeCandles2(candles)
+  # Write your code here
+ maxElement = candles.max
+ puts(candles.count(maxElement))
+    
+
+end
+puts(birthdayCakeCandles2(arr))

@@ -50,6 +50,19 @@ function miniMaxSum(arr) {
 
 }
 
-let arr = [3, 2, 1, 5, 7, 6];
+let arr = [3, 2, 1, 5, 7, 6, 8, 8, 8];
 
- console.log(miniMaxSum(arr))
+//  console.log(miniMaxSum(arr))
+function birthdayCakeCandles(candles) {
+  // Write your code here
+ let maxElement = Math.max(...candles);
+ result = 0
+ for (let i = 0; i <=  candles.length; i ++){
+   if (maxElement == candles[i]){
+     result += 1    
+   }  
+ }
+ return result
+}
+
+console.log(birthdayCakeCandles(arr))
