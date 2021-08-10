@@ -65,4 +65,34 @@ function birthdayCakeCandles(candles) {
  return result
 }
 
-console.log(birthdayCakeCandles(arr))
+// console.log(birthdayCakeCandles(arr))
+
+let word = "07:05:45PM".split(":")
+let m = "07:05:45PM".split("")
+
+function timeConversion(s) {
+  s.replace("PM", "");
+  let splitNumbers =  s.replace("PM", "");
+  let format = s.split("");
+  let first = s.split(":");
+  let result;
+  if (format[format.length-2] === "P"  && first[0] !== "12"){
+   let sum = String(parseInt(first[0])  + 12);
+   splitNumbers = splitNumbers.split(":")
+   splitNumbers.splice(0,1,sum);   
+   result = splitNumbers.join(":")    
+    }
+  else if( first[0] === "12" && format[format.length-2] === "A"){
+    format.splice(format.length-2);    
+    format = format.join("");
+   result =  format.replace(/^.{2}/g, '00');
+   
+  }
+  else if(format[format.length-2] === "A" || format[format.length-2] === "P" ){
+    format.splice(format.length-2);    
+    result = format.join("");
+    
+  }
+  console.log(result)
+}
+console.log(timeConversion("5:05:45AM"));
