@@ -67,8 +67,25 @@ end
 def birthdayCakeCandles2(candles)
   # Write your code here
  maxElement = candles.max
- puts(candles.count(maxElement))
+#  puts(candles.count(maxElement))
     
 
 end
-puts(birthdayCakeCandles2(arr))
+# puts(birthdayCakeCandles2(arr))
+
+
+def two_sum(nums, target)
+    result = []
+   
+    (0..(nums.length - 1)).each do |i|
+      w = i + 1 
+     (w..(nums.length - 1)).each do |w|
+        if nums[i] + nums[w] == target
+          result.push(i,w)
+        end
+      end
+    end
+    return result
+  end
+
+print(two_sum([2,7,11,15], 9))
