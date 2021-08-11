@@ -67,9 +67,6 @@ function birthdayCakeCandles(candles) {
 
 // console.log(birthdayCakeCandles(arr))
 
-let word = "07:05:45PM".split(":")
-let m = "07:05:45PM".split("")
-
 function timeConversion(s) {
   s.replace("PM", "");
   let splitNumbers =  s.replace("PM", "");
@@ -79,20 +76,36 @@ function timeConversion(s) {
   let x = format[format.length-2];
   if (x === "P"  && first[0] !== "12"){
    let sum = String(parseInt(first[0])  + 12);
-   splitNumbers = splitNumbers.split(":")
+   splitNumbers = splitNumbers.split(":");
    splitNumbers.splice(0,1,sum);   
-   result = splitNumbers.join(":")    
-    }
+   result = splitNumbers.join(":");    
+  }
   else if( first[0] === "12" && x === "A"){
     format.splice(format.length-2);    
     format = format.join("");
-   result =  format.replace(/^.{2}/g, '00');   
+    result =  format.replace(/^.{2}/g, '00');   
   }
   else if(x === "A" || x === "P" ){
     format.splice(format.length-2);    
-    result = format.join("");
-    
+    result = format.join("");    
   }
-  return result
+  return result;
 }
-console.log(timeConversion("5:05:45PM"));
+// console.log(timeConversion("5:05:45PM"));
+
+let twoSum = function(nums, target) {
+
+  let result = [];
+  for(let i = 0; i < nums.length; i ++){
+    for(let w = i + 1; w < nums.length; w ++){
+      if(nums[i] + nums[w] === target){
+        result.push(i);
+        result.push(w);
+      }
+    }
+   
+  }
+  return result;
+};
+
+console.log(twoSum([2,7,11,15], 26));
