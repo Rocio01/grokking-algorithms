@@ -108,4 +108,13 @@ let twoSum = function(nums, target) {
   return result;
 };
 
-console.log(twoSum([2,7,11,15], 26));
+// console.log(twoSum([2,7,11,15], 26));
+var reverse = function(x) {
+  let s  =  parseInt(x.toString().split("").reverse().join(""));
+  if (s < (Math.pow(2, 31) * -1) || s > Math.pow(2, 31) - 1) {
+    return 0; }
+  return s * Math.sign(x);
+  
+ }
+//  console.log((reverse(0)));
+

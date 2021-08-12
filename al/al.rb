@@ -88,4 +88,19 @@ def two_sum(nums, target)
     return result
   end
 
-print(two_sum([2,7,11,15], 9))
+# print(two_sum([2,7,11,15], 9))
+def reverse(x)
+  result = ((x).to_s.reverse).to_i
+     if (result < -2147483648 || result > 2147483647)
+        return 0
+     end
+     if x < 0
+      return result * -1
+     end
+     if x === 0
+      return 0
+     end
+  return result
+end
+
+print(reverse(214))
