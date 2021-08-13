@@ -118,3 +118,64 @@ var reverse = function(x) {
  }
 //  console.log((reverse(0)));
 
+var isPalindrome = function(x) {
+  let s = parseInt(x.toString().split("").reverse().join("")); 
+  if (s === x || x === 0){
+    return true
+  }
+  else if (s !== x || x < 0) {
+    return !x
+  }
+
+};
+
+// console.log(isPalindrome(0))
+
+const sonnet = `Let me not to the marriage of true minds
+Admit impediments. Love is not love
+Which alters when it alteration finds,
+Or bends with the remover to remove.
+O no, it is an ever-fixed mark
+That looks on tempests and is never shaken;
+It is the star to every wand'ring bark,
+Whose worth's unknown, although his height be taken.
+Love's not time's fool, though rosy lips and cheeks
+Within his bending sickle's compass come:
+Love alters not with his brief hours and weeks,
+But bears it out even to the edge of doom.
+  If this be error and upon me proved,
+  I never writ, nor no man ever loved.`;
+
+function countWords(text){
+  let uniques = {};
+  let words = text.match(/[\w']+/g);
+
+  for(let i = 0; i < words.length; i ++){
+    let word = words[i];
+    if(uniques[word]){
+       uniques[word] += 1;
+    } else {
+      uniques[word] = 1;
+    }
+    
+  }
+ return uniques
+}
+
+function countWords1(text){
+  let uniques = new Map();
+  let words = text.match(/[\w']+/g);
+  for(let i = 0; i < words.length; i ++){
+    let word = words[i];
+    let currentValue = uniques.get(word); 
+    if(uniques.get(word)){
+      uniques.set(word, currentValue + 1);
+    } else {
+      uniques.set(word,  1)
+    }    
+  }
+  return uniques
+}
+
+// console.log(countWords1(sonnet));
+
