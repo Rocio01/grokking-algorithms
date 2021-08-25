@@ -108,7 +108,7 @@ let twoSum = function(nums, target) {
   return result;
 };
 
-// console.log(twoSum([2,7,11,15], 26));
+ console.log(twoSum([2,7,11,15], 26));
 var reverse = function(x) {
   let s  =  parseInt(x.toString().split("").reverse().join(""));
   if (s < (Math.pow(2, 31) * -1) || s > Math.pow(2, 31) - 1) {
@@ -179,3 +179,26 @@ function countWords1(text){
 
 // console.log(countWords1(sonnet));
 
+// Write a function to find the longest common prefix string amongst an array of strings.
+// If there is no common prefix, return an empty string "".
+
+ var longestCommonPrefix = function(strs) {
+   let prefix = "";
+   let first = strs[0];
+   for(let i = 0; i < first.length; i ++){
+     let char = first[i];
+     for( let j = 1; j < strs.length; j ++){ 
+      if (strs[j][i] !== char){
+        return prefix
+      }
+      
+     }
+     prefix += char
+    
+ }
+ return prefix
+}
+
+
+let strs = [""]
+// console.log(longestCommonPrefix(strs));
